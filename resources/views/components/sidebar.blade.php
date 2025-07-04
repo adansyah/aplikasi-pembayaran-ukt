@@ -1,11 +1,11 @@
 <section id="sidebar">
     <a href="#" class="brand">
         <i class='bx bx-user-circle'></i>
-        <span class="text">AdminHub</span>
+        <span class="text">Syahdan Mutahariq</span>
     </a>
     <ul class="side-menu top">
-        <li class="active">
-            <a href="#">
+        <li class="{{ request()->is('admin') ? 'active' : '' }}"">
+            <a href="admin">
                 <i class='bx bxs-dashboard'></i>
                 <span class="text">Dashboard</span>
             </a>
@@ -16,14 +16,14 @@
                 <span class="text">Profile</span>
             </a>
         </li>
-        <li>
-            <a href="#">
+        <li class="{{ request()->is('tagihan') ? 'active' : '' }}"">
+            <a href="tagihan">
                 <i class='bx bxs-wallet'></i>
                 <span class="text">Tagihan</span>
             </a>
         </li>
-        <li>
-            <a href="#">
+        <li class="{{ request()->is('riwayat') ? 'active' : '' }}">
+            <a href="riwayat">
                 <i class='bx bx-task'></i>
                 <span class="text">Riwayat Transaksi</span>
             </a>
