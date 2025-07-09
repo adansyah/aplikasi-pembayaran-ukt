@@ -1,5 +1,5 @@
 <section id="sidebar">
-    <a href="#" class="brand">
+    <a href="/admin" class="brand">
         <i class='bx bx-user-circle'></i>
         <span class="text">Syahdan Mutahariq</span>
     </a>

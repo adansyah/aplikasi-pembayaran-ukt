@@ -14,3 +14,6 @@ Route::get('/riwayat', function () {
 Route::get('/tagihan', function () {
     return view('page.tagihan');
 });
+Route::get('/bukti', function () {
+    return view('page.bukti');
+});

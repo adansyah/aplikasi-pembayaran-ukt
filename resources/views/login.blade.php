@@ -95,7 +95,7 @@
         }
 
         .illustration {
-            position: relative;
+            /* position: relative; */
             /* top: 100px; */
             bottom: 10px;
             width: 100%;
@@ -114,14 +114,15 @@
         <div class="login-card d-flex">
             <!-- Left Panel -->
             <div class="login-left d-flex flex-column justify-content-center">
-                <h2 class="login-title mb-5 m-auto">Login</h2>
+                <h2 class="login-title mb-5 m-auto" style="font-weight:bold">Login</h2>
                 <form>
                     <div class="mb-4">
-                        <label for="nim" class="form-label fw-bold" style="color: #102263">NIM</label>
+                        <label for="nim" class="form-label " style="color: #102263;font-weight: 600">NIM</label>
                         <input type="text" class="form-control" id="nim" placeholder="Enter NIM">
                     </div>
                     <div class="mb-3">
-                        <label for="password" class="form-label fw-bold" style="color: #102263">Password</label>
+                        <label for="password" class="form-label"
+                            style="color: #102263;font-weight:600;">Password</label>
                         <input type="password" class="form-control" id="password" placeholder="Enter Password">
                     </div>
                     <div class="forgot mb-4">
@@ -134,9 +135,11 @@
 
             <!-- Right Panel -->
             <div class="login-right d-flex flex-column justify-content-center">
-                <h2 class="fw-bold mt-5" style="color: #cce5ff">Welcome to<br> Rex – Education</h2>
-                <p class="mt-3 text-white-50">Don't be afraid to fail. Be afraid of not trying</p>
-                <div class="illustration mt-5">
+                <h2 class="fw-bold mt-5 mb-0" style="color: #cce5ff;font-size: 2.5rem">Welcome to<br> Rex – Education
+                </h2>
+                <p class="text-white-50 mb-0" style="font-size: 0.8rem">Don't be afraid to fail. Be afraid of not trying
+                </p>
+                <div class="illustration">
                     <img src="{{ asset('wisuda.png') }}" alt="Characters" loading="lazy" />
                 </div>
             </div>

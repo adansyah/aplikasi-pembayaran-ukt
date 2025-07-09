@@ -8,12 +8,13 @@
     </form>
     {{-- <input type="checkbox" id="switch-mode" hidden> --}}
     {{-- <label for="switch-mode" class="switch-mode"></label> --}}
-    <a href="#" class="notification">
-        <i class='bx bxs-bell'></i>
-        <span class="num">8</span>
-    </a>
-    <a href="#" class="profile d-flex align-items-center justify-content-center gap-2">
-        <img src="{{ asset('style/people.png') }}" loading="lazy">
-        <p class="mt-3 fw-bold fs-6">Syahdan Mutahariq <br> Semester 4</p>
+
+    <a href="#" class="profile d-flex align-items-center gap-3">
+        <img src="{{ asset('style/people.png') }}" alt="Profile" class="rounded-circle" width="40" height="40"
+            loading="lazy">
+        <div class="d-flex flex-column">
+            <span class="fw-semibold">Syahdan Mutahariq</span>
+            <small class="text-muted">Semester 4</small>
+        </div>
     </a>
 </nav>

@@ -11,7 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="{{ asset('style/style.css') }}">
 
-    <title>AdminHub</title>
+    <title>Rex Education | @yield('title')</title>
 </head>
 
 <body>
@@ -37,8 +37,13 @@
     </section>
     <!-- CONTENT -->
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <script src="{{ asset('style/script.js') }}"></script>
+    {{-- Script Chart.js --}}
+
+    @stack('scripts')
+
 </body>
 
 </html>
