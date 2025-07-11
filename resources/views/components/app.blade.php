@@ -19,23 +19,18 @@
     @include('components.sidebar')
     <!-- SIDEBAR -->
 
-
-
     <!-- CONTENT -->
     <section id="content">
         <!-- NAVBAR -->
         @include('components.navbar')
         <!-- NAVBAR -->
 
-        <!-- MAIN -->
-
-
+        <!-- CONTENT -->
         <main>
             @yield('content')
         </main>
-        <!-- MAIN -->
+        <!-- CONTENT -->
     </section>
-    <!-- CONTENT -->
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 

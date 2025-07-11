@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login - Rex Education</title>
+    <title>Reset Password - Rex Education</title>
     <link rel="icon" type="image/png" href="{{ asset('wisuda.png') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -50,21 +50,6 @@
             position: relative;
         }
 
-
-        .form-control {
-            /* background-color:; */
-            /* border: none; */
-            /* border-bottom: 1px solid #ccc;*/
-            /* border-radius: 0; */
-            /* color: #000; */
-
-        }
-
-        /* .form-control:focus {
-            border-bottom: 2px solid #003366;
-            box-shadow: none;
-        } */
-
         .btn-login {
             background-color: #102263;
             color: #fff;
@@ -105,74 +90,56 @@
         .illustration img {
             max-width: 200px;
         }
-
-        a.btn-google:hover {
-            background-color: #f8f9fa;
-            color: #333;
-            text-decoration: none;
-        }
     </style>
 </head>
 
 <body>
-
     <div class="container login-container">
         <div class="login-card d-flex">
             <!-- Left Panel -->
             <div class="login-left d-flex flex-column justify-content-center">
-                <h2 class="login-title mb-5 m-auto" style="font-weight:bold">Login</h2>
-                @if (session('status'))
-                    <p style="color: green;">{{ session('status') }}</p>
+                <h2 class="login-title text-center" style="font-weight:bold">Reset Password</h2>
+                @if ($errors->any())
+                    <ul style="color: red;">
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
                 @endif
 
-                @error('nim')
-                    <ul style="color: red">
-                        <li>{{ $message }}</li>
-                    </ul>
-                @enderror
 
-                @error('password')
-                    <ul style="color: red">
-                        <li>{{ $message }}</li>
-                    </ul>
-                @enderror
-
-                <form action="/login" method="post">
+                <form action="/reset-password" method="post" class="mt-2">
                     @csrf
-                    <div class="mb-4">
-                        <label for="nim" class="form-label" style="color: #102263; font-weight: 600">NIM</label>
-                        <input type="text" class="form-control" name="nim" id="nim" placeholder="Enter NIM"
-                            required oninvalid="this.setCustomValidity('NIM harus diisi')"
-                            oninput="this.setCustomValidity(''); this.value = this.value.replace(/[^0-9]/g, '')">
+                    <input type="hidden" name="token" value="{{ $token }}">
+                    <div class="mb-3">
+                        <label for="email" class="form-label" style="color: #102263;font-weight:600;">Email</label>
+                        <input type="email" class="form-control" name="email" id="email"
+                            placeholder="Enter email" required oninvalid="this.setCustomValidity('email harus diisi')"
+                            oninput="this.setCustomValidity('')">
                     </div>
                     <div class="mb-3">
-                        <label for="password" class="form-label"
-                            style="color: #102263;font-weight:600;">Password</label>
+                        <label for="password" class="form-label" style="color: #102263;font-weight:600;">Password
+                            Baru</label>
                         <input type="password" class="form-control" name="password" id="password"
                             placeholder="Enter Password" required
                             oninvalid="this.setCustomValidity('Password harus diisi')"
                             oninput="this.setCustomValidity('')">
                     </div>
-                    <div class="forgot
-                            mb-4">
-                        <a href="/forgot-password">Lupa Sandi?</a>
+                    <div class="mb-3">
+                        <label for="password" class="form-label" style="color: #102263;font-weight:600;">Konfirmasi
+                            Password</label>
+                        <input type="password" class="form-control" name="password_confirmation" id="password"
+                            placeholder="Enter Password" required
+                            oninvalid="this.setCustomValidity('Password harus diisi')"
+                            oninput="this.setCustomValidity('')">
                     </div>
-                    <button type="submit" class="btn btn-login w-100 mb-2">Login</button>
-                    <a href="{{ url('/auth/google') }}"
-                        class="btn btn-google mb-2 w-100 d-flex align-items-center justify-content-center"
-                        style="border: 1px solid #ddd; background-color: #fff; color: #555; font-weight: 500; border-radius: 8px;">
-                        <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google Logo"
-                            style="width: 20px; margin-right: 10px;">
-                        Login dengan Google
-                    </a>
-
+                    <button type="submit" class="btn btn-login w-100 mb-2">Reset Password</button>
                     <div class="mb-4 text-center" style="font-size: 0.9rem;margin-top: 10px">
-                        <a href="/register" style="text-decoration: none">Belum punya akun?</a>
+                        <a href="{{ route('login') }}" style="text-decoration: none">Kembali ke Login</a>
                     </div>
 
                 </form>
             </div>
-
             <!-- Right Panel -->
             <div class="login-right d-flex flex-column justify-content-center">
                 <h2 class="fw-bold mt-5 mb-0" style="color: #cce5ff;font-size: 3rem">Welcome to<br> Rex – Education

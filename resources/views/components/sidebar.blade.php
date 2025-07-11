@@ -1,11 +1,11 @@
 <section id="sidebar">
-    <a href="/admin" class="brand">
+    <a href="/dashboard" class="brand">
         <i class='bx bx-user-circle'></i>
         <span class="text">Syahdan Mutahariq</span>
     </a>
     <ul class="side-menu top">
-        <li class="{{ request()->is('admin') ? 'active' : '' }}"">
-            <a href="admin">
+        <li class="{{ request()->is('dashboard') ? 'active' : '' }}"">
+            <a href="dashboard">
                 <i class='bx bxs-dashboard'></i>
                 <span class="text">Dashboard</span>
             </a>
@@ -29,10 +29,13 @@
             </a>
         </li>
         <li>
-            <a href="/" class="logout">
-                <i class='bx bx-log-out'></i>
-                <span class="text">Logout</span>
-            </a>
+            <form action="{{ route('logout') }}" method="post">
+                @csrf
+                <button type="submit" class="btn btn-none "><i class="bx bx-log-out me-1"></i>
+                    <span class="text-white">Logout</span>
+                </button>
+
+            </form>
         </li>
         {{-- <li>
             <a href="#">
