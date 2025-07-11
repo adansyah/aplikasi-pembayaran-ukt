@@ -10,7 +10,5 @@
 ## Aplikasi Pembayaran UKT dengan Laravel 12
 1. download project nya
 2. composer install atau composer update
-3. php artisan migrate
-4. npm install
-5. npm run build
-6. composer run dev
+3. php artisan migrate --seed
+4. php artisan serve
