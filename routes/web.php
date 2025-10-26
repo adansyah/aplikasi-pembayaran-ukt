@@ -30,3 +30,6 @@ Route::get('/tagihan', function () {
 Route::get('/bukti', function () {
     return view('page.bukti');
 });
+Route::get('/dash', function () {
+    return view('page.dash');
+});
