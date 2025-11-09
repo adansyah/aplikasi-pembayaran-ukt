@@ -17,12 +17,14 @@
 <body>
     <!-- SIDEBAR -->
     @include('components.sidebar')
+
     <!-- SIDEBAR -->
 
     <!-- CONTENT -->
     <section id="content">
         <!-- NAVBAR -->
         @include('components.navbar')
+
         <!-- NAVBAR -->
 
         <!-- CONTENT -->
