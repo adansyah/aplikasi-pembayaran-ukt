@@ -51,19 +51,7 @@
         }
 
 
-        .form-control {
-            /* background-color:; */
-            /* border: none; */
-            /* border-bottom: 1px solid #ccc;*/
-            /* border-radius: 0; */
-            /* color: #000; */
 
-        }
-
-        /* .form-control:focus {
-            border-bottom: 2px solid #003366;
-            box-shadow: none;
-        } */
 
         .btn-login {
             background-color: #102263;
